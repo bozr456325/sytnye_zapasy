@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="cart">
+    <h2>Ваша корзина</h2>
+    <div class="cart-notice">
+        <p>Онлайн-покупка пока недоступна. Корзина предназначена для расчета суммы товаров.</p>
+        <p>Чтобы оформить заказ, напишите нам в WhatsApp:</p>
+        <a href="https://wa.me/79284109405" class="whatsapp-btn">
+            <img src="{{ url_for('static', filename='images/whatsapp2-icon.png') }}" alt="WhatsApp">
+            Написать в WhatsApp
+        </a>
+    </div>
+    {% if cart_items %}
+    <div class="cart-items">
+        {% for product_id, item in cart_items.items() %}
+        <div class="cart-item">
+            <img src="{{ url_for('static', filename='images/' + item.image) }}" alt="{{ item.name }}">
+            <div class="item-details">
+                <h4>{{ item.name }}</h4>
+                <p>{{ item.price }} руб. x {{ item.quantity }}</p>
+                <p>Итого: {{ item.price * item.quantity }} руб.</p>
+                <a href="{{ url_for('remove_from_cart', product_id=product_id) }}" class="remove-btn">Удалить</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="total-price">
+        <h3>Общая сумма: {{ total_price }} руб.</h3>
+    </div>
+    {% else %}
+    <p>Ваша корзина пуста.</p>
+    {% endif %}
+</section>
+{% endblock %}

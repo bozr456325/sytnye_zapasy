@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="catalog-container">
+    <!-- Каталог слева -->
+    <div class="category-list">
+        <div class="category" onclick="showCategory('meat')">
+            <h3>Мясная продукция</h3>
+        </div>
+        <div class="category" onclick="showCategory('fish')">
+            <h3>Рыбная продукция</h3>
+        </div>
+        <div class="category" onclick="showCategory('soups')">
+            <h3>Супы</h3>
+        </div>
+        <div class="category" onclick="showCategory('pates')">
+            <h3>Паштеты и рийеты</h3>
+        </div>
+    </div>
+
+    <!-- Продукты справа -->
+    <div class="product-list">
+        <div id="meat" class="category-content active">
+            {% for product in products if product.category == 'meat' %}
+            <div class="product">
+                <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+                <h4>{{ product.name }}</h4>
+                <p>{{ product.description }}</p>
+                <p class="volume">Объём: {{ product.volume }}</p>
+                <p class="price">{{ product.price }} руб.</p>
+                <form class="add-to-cart-form" data-product-id="{{ product.id }}">
+                    <input type="hidden" name="product_id" value="{{ product.id }}">
+                    <button type="submit" class="add-to-cart-btn">Добавить в корзину</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+        <div id="fish" class="category-content">
+            {% for product in products if product.category == 'fish' %}
+            <div class="product">
+                <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+                <h4>{{ product.name }}</h4>
+                <p>{{ product.description }}</p>
+                <p class="volume">Объём: {{ product.volume }}</p>
+                <p class="price">{{ product.price }} руб.</p>
+                <form class="add-to-cart-form" data-product-id="{{ product.id }}">
+                    <input type="hidden" name="product_id" value="{{ product.id }}">
+                    <button type="submit" class="add-to-cart-btn">Добавить в корзину</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+        <div id="soups" class="category-content">
+            {% for product in products if product.category == 'soups' %}
+            <div class="product">
+                <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+                <h4>{{ product.name }}</h4>
+                <p>{{ product.description }}</p>
+                <p class="volume">Объём: {{ product.volume }}</p>
+                <p class="price">{{ product.price }} руб.</p>
+                <form class="add-to-cart-form" data-product-id="{{ product.id }}">
+                    <input type="hidden" name="product_id" value="{{ product.id }}">
+                    <button type="submit" class="add-to-cart-btn">Добавить в корзину</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+        <div id="pates" class="category-content">
+            {% for product in products if product.category == 'pates' %}
+            <div class="product">
+                <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+                <h4>{{ product.name }}</h4>
+                <p>{{ product.description }}</p>
+                <p class="volume">Объём: {{ product.volume }}</p>
+                <p class="price">{{ product.price }} руб.</p>
+                <form class="add-to-cart-form" data-product-id="{{ product.id }}">
+                    <input type="hidden" name="product_id" value="{{ product.id }}">
+                    <button type="submit" class="add-to-cart-btn">Добавить в корзину</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+
+    // Функция для плавного отображения выбранной категории
+    function showCategory(categoryId) {
+    // Скрываем все блоки с продуктами
+    document.querySelectorAll('.category-content').forEach(content => {
+        content.classList.remove('active'); // Убираем класс active
+    });
+
+    // Назначаем обработчики событий для категорий
+document.querySelectorAll('.category').forEach(category => {
+    category.addEventListener('click', () => {
+        const categoryId = category.getAttribute('onclick').match(/'(.*?)'/)[1]; // Получаем ID категории
+        showCategory(categoryId); // Показываем выбранную категорию
+    });
+});
+
+// По умолчанию показываем первую категорию
+document.addEventListener('DOMContentLoaded', () => {
+    showCategory('meat'); // Замените 'meat' на ID первой категории
+});
+
+    // Показываем выбранный блок с плавной анимацией
+    const selectedContent = document.getElementById(categoryId);
+    if (selectedContent) {
+        setTimeout(() => {
+            selectedContent.classList.add('active'); // Добавляем класс active
+        }, 10); // Небольшая задержка для плавности
+    }
+}
+
+
+    // Функция для отображения выбранной категории
+    function showCategory(categoryId) {
+        // Скрываем все блоки с продуктами
+        document.querySelectorAll('.category-content').forEach(content => {
+            content.style.display = 'none';
+        });
+
+        // Показываем выбранный блок
+        const selectedContent = document.getElementById(categoryId);
+        if (selectedContent) {
+            selectedContent.style.display = 'flex';
+        }
+    }
+
+    // Функция для асинхронной отправки данных
+    async function addToCart(event) {
+        event.preventDefault(); // Отменяем стандартное поведение формы
+
+        const form = event.target;
+        const productId = form.getAttribute('data-product-id');
+
+        try {
+            const response = await fetch('/add_to_cart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `product_id=${productId}`,
+            });
+
+            if (response.ok) {
+                alert('Товар добавлен в корзину!');
+            } else {
+                alert('Ошибка при добавлении товара в корзину.');
+            }
+        } catch (error) {
+            console.error('Ошибка:', error);
+        }
+    }
+
+    // Назначаем обработчик события для всех форм добавления в корзину
+    document.querySelectorAll('.add-to-cart-form').forEach(form => {
+        form.addEventListener('submit', addToCart);
+    });
+
+    async function addToCart(event) {
+    event.preventDefault(); // Отменяем стандартное поведение формы
+
+    // Проверяем, авторизован ли пользователь
+    const isLoggedIn = await checkIfLoggedIn();
+    if (!isLoggedIn) {
+        alert('Для добавления товара в корзину необходимо войти в систему.');
+        window.location.href = '/login'; // Перенаправляем на страницу входа
+        return;
+    }
+
+    const form = event.target;
+    const productId = form.getAttribute('data-product-id');
+
+    try {
+        const response = await fetch('/add_to_cart', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `product_id=${productId}`,
+        });
+
+        if (response.ok) {
+            alert('Товар добавлен в корзину!');
+        } else {
+            alert('Ошибка при добавлении товара в корзину.');
+        }
+    } catch (error) {
+        console.error('Ошибка:', error);
+    }
+}
+
+// Функция для проверки авторизации
+async function checkIfLoggedIn() {
+    try {
+        const response = await fetch('/check_auth');
+        const data = await response.json();
+        return data.isLoggedIn;
+    } catch (error) {
+        console.error('Ошибка при проверке авторизации:', error);
+        return false;
+    }
+}
+
+
+</script>
+{% endblock %}

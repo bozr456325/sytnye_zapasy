@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <h1>Добро пожаловать в Сытные запасы!</h1>
+    <p>Наши консервы изготавливаются с любовью на Кубани. Попробуйте настоящий вкус природы!</p>
+    <a href="/products" class="btn">Посмотреть каталог</a>
+</section>
+
+<section class="about">
+    <h2>О нас</h2>
+    <p>Мы — молодая компания, которая только начинает свой путь в мире производства натуральных консервов. Наша продукция изготавливается с любовью на Кубани, где плодородные земли и благоприятный климат позволяют выращивать экологически чистые продукты.</p>
+    <p>Мы стремимся к тому, чтобы каждая банка наших консервов приносила вам радость и удовольствие. Наша цель — стать вашим надёжным партнёром в выборе качественных и вкусных продуктов.</p>
+    <div class="about-images">
+        <img src="{{ url_for('static', filename='images/about1.jpg') }}" alt="Наше производство">
+        <img src="{{ url_for('static', filename='images/about2.jpg') }}" alt="Наши продукты">
+        <img src="{{ url_for('static', filename='images/about3.jpg') }}" alt="Наша команда">
+    </div>
+</section>
+
+<!-- Новая секция: История компании -->
+<section class="history">
+    <h2>Наша история</h2>
+    <p>Сытные запасы начали свой путь в 2020 году с небольшого семейного производства. Наши первые продукты — это тушёная говядина и курица, которые быстро завоевали любовь местных жителей. Сегодня мы производим более 20 видов консервов, сохраняя традиции и качество.</p>
+    <div class="history-images">
+        <img src="{{ url_for('static', filename='images/history1.jpg') }}" alt="Наше начало">
+        <img src="{{ url_for('static', filename='images/history2.jpg') }}" alt="Наше развитие">
+    </div>
+</section>
+
+<!-- Новая секция: Наши преимущества (расширенный список) -->
+<section class="features">
+    <h2>Почему выбирают нас?</h2>
+    <div class="feature-list">
+        <div class="feature">
+            <img src="{{ url_for('static', filename='images/eco-icon.png') }}" alt="Экологичность">
+            <h3>Экологичность</h3>
+            <p>Мы используем только натуральные ингредиенты без добавления консервантов.</p>
+        </div>
+        <div class="feature">
+            <img src="{{ url_for('static', filename='images/tradition-icon.png') }}" alt="Традиции">
+            <h3>Традиции</h3>
+            <p>Рецепты, передающиеся из поколения в поколение, делают наши продукты уникальными.</p>
+        </div>
+        <div class="feature">
+            <img src="{{ url_for('static', filename='images/quality-icon.png') }}" alt="Качество">
+            <h3>Качество</h3>
+            <p>Строгий контроль на всех этапах производства гарантирует высочайшее качество.</p>
+        </div>
+        <div class="feature">
+            <img src="{{ url_for('static', filename='images/delivery-icon.png') }}" alt="Доставка">
+            <h3>Быстрая доставка</h3>
+            <p>Мы доставляем заказы по всей России в кратчайшие сроки.</p>
+        </div>
+        <div class="feature">
+            <img src="{{ url_for('static', filename='images/support-icon.png') }}" alt="Поддержка">
+            <h3>Поддержка 24/7</h3>
+            <p>Наша служба поддержки всегда готова помочь вам с выбором и оформлением заказа.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Новая секция: Акции и спецпредложения -->
+<section class="promo">
+    <h2>Акции и спецпредложения</h2>
+    <div class="promo-list">
+        <div class="promo-item">
+            <img src="{{ url_for('static', filename='images/promo1.jpg') }}" alt="Акция 1">
+            <h3>Скидка 10% на первый заказ</h3>
+            <p>Закажите сейчас и получите скидку на первый заказ!</p>
+        </div>
+        <div class="promo-item">
+            <img src="{{ url_for('static', filename='images/promo2.jpg') }}" alt="Акция 2">
+            <h3>Бесплатная доставка</h3>
+            <p>При заказе от 3000 рублей доставка бесплатно!</p>
+        </div>
+        <div class="promo-item">
+            <img src="{{ url_for('static', filename='images/promo3.jpg') }}" alt="Акция 3">
+            <h3>Подарок за отзыв</h3>
+            <p>Оставьте отзыв и получите подарок к следующему заказу.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Новая секция: Партнеры и сертификаты -->
+<section class="partners">
+    <h2>Наши партнеры и сертификаты</h2>
+    <div class="partners-list">
+        <img src="{{ url_for('static', filename='images/partner1.png') }}" alt="Партнер 1">
+        <img src="{{ url_for('static', filename='images/partner2.png') }}" alt="Партнер 2">
+        <img src="{{ url_for('static', filename='images/certificate1.png') }}" alt="Сертификат 1">
+        <img src="{{ url_for('static', filename='images/certificate2.png') }}" alt="Сертификат 2">
+    </div>
+</section>
+
+<!-- Новая секция: Фотогалерея производства -->
+<section class="gallery">
+    <h2>Фотогалерея производства</h2>
+    <div class="gallery-images">
+        <img src="{{ url_for('static', filename='images/gallery1.jpg') }}" alt="Производство 1">
+        <img src="{{ url_for('static', filename='images/gallery2.jpg') }}" alt="Производство 2">
+        <img src="{{ url_for('static', filename='images/gallery3.jpg') }}" alt="Производство 3">
+        <img src="{{ url_for('static', filename='images/gallery4.jpg') }}" alt="Производство 4">
+    </div>
+</section>
+
+<!-- Новая секция: Дополнительные отзывы клиентов -->
+<section class="testimonials">
+    <h2>Отзывы наших клиентов</h2>
+    <div class="testimonial-list">
+        <div class="testimonial">
+            <p>"Консервы от Сытных запасов — это настоящая находка! Вкус как из детства, всё натуральное и свежее."</p>
+            <span>— Марина, Краснодар</span>
+        </div>
+        <div class="testimonial">
+            <p>"Заказываю уже несколько лет. Качество на высоте, а доставка быстрая и удобная."</p>
+            <span>— Иван, Москва</span>
+        </div>
+        <div class="testimonial">
+            <p>"Лучшие консервы, которые я пробовал! Рекомендую всем, кто ценит качество и вкус."</p>
+            <span>— Ольга, Санкт-Петербург</span>
+        </div>
+        <div class="testimonial">
+            <p>"Отличное качество и быстрая доставка. Спасибо за вкусные консервы!"</p>
+            <span>— Алексей, Ростов-на-Дону</span>
+        </div>
+        <div class="testimonial">
+            <p>"Очень доволен выбором. Теперь только у вас заказываю!"</p>
+            <span>— Екатерина, Сочи</span>
+        </div>
+    </div>
+</section>
+
+<!-- Остальные существующие секции -->
+<section class="cta">
+    <h2>Попробуйте наши консервы уже сегодня!</h2>
+    <p>Закажите прямо сейчас и получите скидку 10% на первый заказ.</p>
+    <a href="/products" class="btn">Сделать заказ</a>
+</section>
+
+<section class="delivery-info">
+    <h2>Доставка и самовывоз</h2>
+    <div class="delivery-options">
+        <div class="delivery-option">
+            <img src="{{ url_for('static', filename='images/delivery-icon.png') }}" alt="Доставка">
+            <h3>Доставка</h3>
+            <p>Мы осуществляем доставку по всей России. Сроки доставки зависят от вашего региона.</p>
+            <ul>
+                <li>Курьерская доставка по Белореченскому району: 1-2 дня</li>
+                <li>Яндекс доставка: 5-10 дней</li>
+            </ul>
+        </div>
+        <div class="delivery-option">
+            <img src="{{ url_for('static', filename='images/pickup-icon.png') }}" alt="Самовывоз">
+            <h3>Самовывоз</h3>
+            <p>Вы можете забрать заказ самостоятельно по следующим адресам:</p>
+            <p>Краснодарский край, г. Белореченск, ул. Пролетарская, д. 207 Б</p>
+            <p>Краснодарский край, г. Белореченск, ул. Загородная, д. 53</p>
+            <p>Краснодарский край, г. Белореченск, ул. Интерциональная, д. 34 Б</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact-info">
+    <h2>Свяжитесь с нами</h2>
+    <div class="contact-details">
+        <div class="contact-item">
+            <img src="{{ url_for('static', filename='images/phone-icon.png') }}" alt="Телефон">
+            <p>Телефон: <a href="tel:+7 928 410-94-05">+7 928 410-94-05</a></p>
+        </div>
+        <div class="contact-item">
+            <img src="{{ url_for('static', filename='images/whatsapp-icon.png') }}" alt="WhatsApp">
+            <p>WhatsApp: <a href="https://wa.me/79284109405">Написать в WhatsApp</a></p>
+        </div>
+        <div class="contact-item">
+            <img src="{{ url_for('static', filename='images/email-icon.png') }}" alt="Email">
+            <p>Email: <a href="mailto:info@sytnye-zapasy.ru">info@sytnye-zapasy.ru</a></p>
+        </div>
+        <div class="contact-item">
+            <img src="{{ url_for('static', filename='images/whatsapp-group-icon.png') }}" alt="WhatsApp Group">
+            <p>Присоединяйтесь к нашей группе в WhatsApp: <a href="https://chat.whatsapp.com/FhrEMKrVGGR7jGR3n18YR4">Вступить в группу</a></p>
+        </div>
+    </div>
+</section>
+{% endblock %}

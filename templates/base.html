@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сытные запасы - Консервы с Кубани</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Сытные запасы">
+            </div>
+            <nav>
+                <div class="menu-icon" id="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="/products">Каталог</a></li>
+                    <li><a href="/cart">Корзина</a></li>
+                    {% if 'user_id' in session %}
+                        <li><span class="username">{{ session['username'] }}</span></li>
+                        <li><a href="/logout">Выйти</a></li>
+                    {% else %}
+                        <li><a href="/login" class="btn">Войти</a></li>
+                        <li><a href="/register" class="btn">Регистрация</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2025 Сытные запасы. Все права защищены.</p>
+    </footer>
+
+    <script>
+        // Открытие/закрытие меню
+        const menuIcon = document.getElementById('menu-icon');
+        const navLinks = document.getElementById('nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            menuIcon.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1379 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ECF0F1;
+    color: #333333;
+}
+
+
+header {
+    background-color: #2C3E50;
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #3498DB;
+}
+
+nav ul li .btn {
+    background-color: #3498DB;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+nav ul li .btn:hover {
+    background-color: #2980B9;
+}
+
+nav ul li .username {
+    font-weight: bold;
+    color: #3498DB;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('/static/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero .btn {
+    background-color: #3498DB;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #2980B9;
+}
+
+/* Общие анимации для всех объектов */
+* {
+    transition: all 0.3s ease;
+}
+
+/* Анимация для шапки */
+header {
+    animation: fadeInDown 1s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация для героя */
+.hero {
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Анимация для кнопок */
+.btn {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* Анимация для карточек товаров */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Анимация для секций */
+.about, .features, .products-preview, .testimonials, .cta {
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация для изображений */
+.about-images img, .product-card img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-images img:hover, .product-card img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Анимация для отзывов */
+.testimonial {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Анимация для навигации */
+nav ul li a {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #3498DB;
+    transform: translateY(-2px);
+}
+
+/* Анимация для футера */
+footer {
+    animation: fadeInUp 1s ease;
+}
+
+/* Стили для секции "История компании" */
+.history {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.history h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #2C3E50;
+}
+
+.history p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    color: #333;
+}
+
+.history-images {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.history-images img {
+    max-width: 45%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.history-images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для секции "Акции и спецпредложения" */
+.promo {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.promo h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #2C3E50;
+}
+
+.promo-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.promo-item {
+    width: 30%;
+    margin: 10px 0;
+    background-color: #ECF0F1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promo-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.promo-item img {
+    max-width: 30%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.promo-item h3 {
+    font-size: 1.5em;
+    color: #2C3E50;
+    margin-bottom: 10px;
+}
+
+.promo-item p {
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Стили для секции "Партнеры и сертификаты" */
+.partners {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.partners h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #2C3E50;
+}
+
+.partners-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.partners-list img {
+    max-width: 200px;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.partners-list img:hover {
+    transform: scale(1.1);
+}
+
+/* Стили для секции "Фотогалерея производства" */
+.gallery {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #2C3E50;
+}
+
+.gallery-images {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px; /* Добавим отступы между изображениями */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.gallery-images img {
+    max-width: 20%; /* Уменьшаем размер изображений */
+    height: auto; /* Сохраняем пропорции */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для дополнительных отзывов */
+.testimonials .testimonial-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.testimonials .testimonial {
+    width: 30%;
+    margin: 20px 0;
+    background-color: #ECF0F1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonials .testimonial:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.testimonials .testimonial p {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.testimonials .testimonial span {
+    font-weight: bold;
+    color: #2C3E50;
+}
+
+/* Стили для секции "О нас" */
+.about {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #2C3E50;
+}
+
+.about p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #333;
+}
+/* Стили для секции "О нас" */
+.about-images {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.about-images img {
+    max-width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для секции "Наши консервы" */
+.products-preview {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.product-card {
+    width: 23%;
+    margin: 10px 0;
+    background-color: #ECF0F1;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 1.5em;
+    color: #2C3E50;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Стили для секции "Призыв к действию" */
+.cta {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #3498DB;
+    color: #fff;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cta .btn {
+    background-color: #2C3E50;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta .btn:hover {
+    background-color: #1A252F;
+}
+
+/* Стили для секции "Особенности" */
+.features {
+
+    margin: 20px 0;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #2C3E50;
+}
+
+.features p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #333;
+}
+
+.feature-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px; /* Отступы между элементами */
+}
+
+.features .feature {
+    width: 30%;
+    margin: 20px 0;
+}
+
+.features .feature img {
+    max-width: 100px;
+    margin-bottom: 15px;
+}
+
+.features .feature h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #2C3E50;
+}
+
+.features .feature p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Стили для секции "Отзывы" */
+.testimonials {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #2C3E50;
+}
+
+.testimonials p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #333;
+}
+
+.testimonials .testimonial-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.testimonials .testimonial {
+    width: 30%;
+    margin: 20px 0;
+    background-color: #ECF0F1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials .testimonial p {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.testimonials .testimonial span {
+    font-weight: bold;
+    color: #2C3E50;
+}
+footer {
+    background-color: #2C3E50;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1em;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+/* Стили для контейнера с каталогом и продуктами */
+.catalog-container {
+    display: flex;
+    gap: 20px; /* Отступ между каталогом и продуктами */
+    max-width: 1200px; /* Ограничиваем ширину контейнера */
+    margin: 0 auto; /* Центрируем контейнер на странице */
+    padding: 20px; /* Отступы внутри контейнера */
+}
+
+/* Стили для каталога слева */
+.category-list {
+    width: 20%;
+    background-color: #ECF0F1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category {
+    margin-bottom: 15px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.category h3 {
+    font-size: 1.2em;
+    color: #2C3E50;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.category:hover {
+    background-color: #3498DB;
+    transform: translateX(10px); /* Сдвиг вправо при наведении */
+}
+
+.category:hover h3 {
+    color: #fff;
+}
+
+/* Стили для списка продуктов справа */
+.product-list {
+    width: 80%; /* Ширина списка продуктов */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Отступы между карточками */
+}
+
+.category-content {
+    display: none; /* По умолчанию скрываем все категории */
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+/* Стили для карточки товара */
+.product {
+    width: calc(50% - 10px); /* 2 карточки в строке */
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ECF0F1;
+    text-align: center; /* Центрируем содержимое */
+}
+
+.product img {
+    max-width: 100%; /* Изображение занимает всю ширину карточки */
+    height: 250px; /* Фиксированная высота для всех изображений */
+    object-fit: cover; /* Сохраняем пропорции изображения */
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product h4 {
+    font-size: 1.2em;
+    color: #2C3E50;
+    margin-bottom: 5px;
+}
+
+.product p {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product .volume {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.product .price {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.add-to-cart-btn {
+    background-color: #2C3E50;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    font-size: 1em;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #3498DB;
+}
+
+/* Стили для кнопки "Добавить в корзину" */
+.add-to-cart-btn {
+    background-color: #8B4513;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #FFD700;
+    color: #8B4513;
+}
+
+/* Стили для корзины */
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    text-align: center;
+}
+
+.cart-item img {
+    max-width: 80px;
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.remove-btn {
+    color: #E74C3C;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.remove-btn:hover {
+    color: #C0392B;
+}
+
+.total-price {
+    margin-top: 20px;
+    text-align: right;
+    font-size: 1.5em;
+    color: #2C3E50;
+}
+
+.cart-notice {
+    background-color: #ECF0F1;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.cart-notice p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Стили для кнопки WhatsApp */
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #25D366;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-btn img {
+    width: 24px;
+    margin-right: 10px;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+}
+
+
+
+/* Стили для карточки товара в каталоге */
+.product {
+    background-color: #fff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.product img {
+    max-width: 100px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product h4 {
+    font-size: 1.5em;
+    color: #8B4513;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.product .add-to-cart-btn {
+    background-color: #8B4513;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+}
+
+.product .add-to-cart-btn:hover {
+    background-color: #FFD700;
+    color: #8B4513;
+}
+
+/* Стили для секции контактной информации */
+.contact-info {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #2C3E50;
+    color: #fff;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.contact-item img {
+    max-width: 40px;
+    margin-right: 15px;
+}
+
+.contact-item p {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.contact-item a {
+    color: #3498DB;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #FFD700;
+}
+
+/* Стили для секции доставки и самовывоза */
+.delivery-info {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.delivery-info h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #2C3E50;
+}
+
+.delivery-options {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.delivery-option {
+    width: 45%;
+    margin: 10px 0;
+    background-color: #ECF0F1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.delivery-option:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.delivery-option img {
+    max-width: 60px;
+    margin-bottom: 15px;
+}
+
+.delivery-option h3 {
+    font-size: 1.8em;
+    color: #2C3E50;
+    margin-bottom: 10px;
+}
+
+.delivery-option p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.delivery-option ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.delivery-option ul li {
+    margin: 10px 0;
+    font-size: 1em;
+    color: #333;
+}
+
+.about-images img {
+    max-width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для форм регистрации и входа */
+.auth {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.auth h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2C3E50;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ECF0F1;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.auth .btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #2C3E50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.auth .btn:hover {
+    background-color: #3498DB;
+}
+
+.auth p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.auth a {
+    color: #3498DB;
+    text-decoration: none;
+}
+
+.auth a:hover {
+    text-decoration: underline;
+}
+
+.auth-notice {
+    font-size: 0.9em;
+    color: #E74C3C;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.auth-notice a {
+    color: #3498DB;
+    text-decoration: none;
+}
+
+.auth-notice a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для экранов меньше 768px (мобильные устройства) */
+@media (max-width: 768px) {
+    /* Уменьшаем размер шрифтов */
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 1em;
+    }
+
+    /* Уменьшаем отступы */
+    .hero {
+        padding: 50px 10px;
+    }
+
+    .category-list {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .product-list {
+        width: 100%;
+    }
+
+    /* Уменьшаем размер изображений в галерее */
+    .gallery-images img {
+        max-width: 45%;
+    }
+
+    /* Уменьшаем размер карточек товаров */
+    .product-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* Уменьшаем размер кнопок */
+    .btn {
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+
+    /* Уменьшаем размер секций */
+    .about, .features, .products-preview, .testimonials, .cta, .delivery-info, .contact-info {
+        padding: 20px 10px;
+    }
+
+    /* Уменьшаем размер изображений в секции "О нас" */
+    .about-images img {
+        max-width: 45%;
+    }
+
+    /* Уменьшаем размер отзывов */
+    .testimonial {
+        width: 100%;
+    }
+
+    /* Уменьшаем размер акций */
+    .promo-item {
+        width: 100%;
+    }
+}
+
+/* Стили для бургер-меню */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-icon span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Анимация для бургер-меню */
+.menu-icon.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Стили для навигации на мобильных устройствах */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #2C3E50;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2em;
+        padding: 10px;
+        display: block;
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        background-color: #3498DB;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+}
+
+/* Скрываем обычное меню на мобильных устройствах */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #2C3E50;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+}
+
+/* Общие стили для мобильных устройств */
+@media (max-width: 768px) {
+    /* Уменьшаем размер шрифтов */
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 1em;
+    }
+
+
+    /* Делаем каталог и продукты вертикальными */
+    .catalog-container {
+        flex-direction: column;
+    }
+    .category-list {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .product-list {
+        width: 100%;
+    }
+
+    /* Уменьшаем размер изображений в галерее */
+    .gallery-images img {
+        max-width: 45%;
+    }
+
+    /* Уменьшаем размер карточек товаров */
+    .product-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* Уменьшаем размер кнопок */
+    .btn {
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+
+    /* Уменьшаем размер секций */
+    .about, .features, .products-preview, .testimonials, .cta, .delivery-info, .contact-info {
+        padding: 20px 10px;
+    }
+
+    /* Уменьшаем размер изображений в секции "О нас" */
+    .about-images img {
+        max-width: 45%;
+    }
+
+    /* Уменьшаем размер отзывов */
+    .testimonial {
+        width: 100%;
+    }
+
+    /* Уменьшаем размер акций */
+    .promo-item {
+        width: 100%;
+    }
+
+    /* Адаптивное меню */
+    .menu-icon {
+        display: flex;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #2C3E50;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Уменьшаем размер логотипа */
+    .logo img {
+        height: 40px;
+    }
+
+    /* Уменьшаем размер изображений в продуктах */
+    .product img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Уменьшаем размер изображений в корзине */
+    .cart-item img {
+        max-width: 80px;
+    }
+
+    /* Уменьшаем размер кнопки WhatsApp */
+    .whatsapp-btn {
+        padding: 8px 16px;
+        font-size: 1em;
+    }
+}
